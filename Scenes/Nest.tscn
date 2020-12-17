@@ -15,7 +15,7 @@ script = ExtResource( 2 )
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 format = 1
-tile_data = PoolIntArray( 0, 2, 0, 1, 2, 1, 65536, 2, 65536, 65537, 2, 65537 )
+tile_data = PoolIntArray( 0, 1, 0, 1, 1, 1, 65536, 1, 65536, 65537, 1, 65537 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 64, 64 )

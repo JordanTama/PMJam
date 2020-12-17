@@ -1,13 +1,12 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scripts/Tunnels/TunnelDrawer.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/Tunnels/TunnelManager.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Tunnel Drawer.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Tunnel Manager.gd" type="Script" id=2]
 
 [node name="Root" type="Node"]
 
-[node name="TunnelManager" type="Node" parent="."]
+[node name="Tunnel Manager" type="Node" parent="."]
 script = ExtResource( 2 )
 
-[node name="TunnelDrawer" type="Node2D" parent="."]
+[node name="Tunnel Drawer" type="Node2D" parent="."]
 script = ExtResource( 1 )
-points_per_unit = 2.0
