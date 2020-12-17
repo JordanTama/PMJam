@@ -17,10 +17,10 @@ func reset_count():
 	egg_count = 0
 
 
-func _on_Nest_body_entered(body):
+func _on_Nest_body_entered(_body):
 	egg_count += 1
 
 
-func _on_Nest_body_exited(body):
+func _on_Nest_body_exited(_body):
 	if egg_count>0:
 		egg_count-=1
