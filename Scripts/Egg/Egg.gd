@@ -1,3 +1,4 @@
+class_name Egg
 extends RigidBody2D
 
 func _ready():
@@ -12,3 +13,7 @@ func _ready():
 func _on_Egg_body_entered(body):
 	if body is Player:
 		queue_free()
+	if body is Nest:
+		$Sprite.modulate = Color.red
+	else:
+		$Sprite.modulate = Color.white	
