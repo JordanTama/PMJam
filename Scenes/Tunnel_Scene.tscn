@@ -5,9 +5,16 @@
 
 [node name="Root" type="Node"]
 
-[node name="TunnelManager" type="Node" parent="."]
-script = ExtResource( 2 )
-
 [node name="TunnelDrawer" type="Node2D" parent="."]
 script = ExtResource( 1 )
+manager_path = NodePath("../TunnelManager")
 points_per_unit = 2.0
+
+[node name="TunnelDrawer2" type="Node2D" parent="."]
+script = ExtResource( 1 )
+manager_path = NodePath("../TunnelManager")
+points_per_unit = 2.0
+
+[node name="TunnelManager" type="Node2D" parent="."]
+position = Vector2( 579.828, 354.968 )
+script = ExtResource( 2 )
