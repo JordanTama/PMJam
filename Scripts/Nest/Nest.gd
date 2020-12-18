@@ -1,3 +1,4 @@
+class_name Nest
 extends Area2D
 
 var egg_count
