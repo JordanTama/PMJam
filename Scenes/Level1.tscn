@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Level1.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Nest.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Egg.tscn" type="PackedScene" id=5]
 
 [node name="Level1" type="Node"]
 script = ExtResource( 2 )
@@ -24,3 +25,6 @@ position = Vector2( 128, 384 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 192, 192 )
+
+[node name="Egg" parent="." instance=ExtResource( 5 )]
+position = Vector2( 320, 304 )

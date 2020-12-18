@@ -1,3 +1,4 @@
+class_name Player
 extends KinematicBody2D
 
 export var acceleration = 500
