@@ -24,22 +24,28 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Player.gd"
 }, {
-"base": "Resource",
-"class": "Tunnel",
+"base": "Node2D",
+"class": "TunnelDrawer",
 "language": "GDScript",
-"path": "res://Scripts/Tunnels/Tunnel.gd"
+"path": "res://Scripts/Tunnels/TunnelDrawer.gd"
 }, {
-"base": "Node",
+"base": "Node2D",
 "class": "TunnelManager",
 "language": "GDScript",
 "path": "res://Scripts/Tunnels/TunnelManager.gd"
+}, {
+"base": "Reference",
+"class": "TunnelVertex",
+"language": "GDScript",
+"path": "res://Scripts/Tunnels/TunnelVertex.gd"
 } ]
 _global_script_class_icons={
 "Egg": "",
 "Nest": "",
 "Player": "",
-"Tunnel": "",
-"TunnelManager": ""
+"TunnelDrawer": "",
+"TunnelManager": "",
+"TunnelVertex": ""
 }
 
 [application]

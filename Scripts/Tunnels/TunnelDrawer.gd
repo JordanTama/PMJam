@@ -1,44 +1,54 @@
+class_name TunnelDrawer
+
 extends Node2D
 
 
-export var manager : Resource = preload("res://Scripts/Tunnels/TunnelManager.gd")
-export(float) var points_per_unit
+export(NodePath) var manager_path
+onready var manager = get_node(manager_path) as TunnelManager
+
+export(float) var point_spread = 50
 
 
-var is_drawing = true
-var tunnel = Tunnel.new()
+var is_drawing = false
+var prev
 
 
-func _process(delta):
+func _process(_delta):
 	if (is_drawing):
 		try_add_point()
-		
-	print(tunnel.size())
 
 
 func try_add_point():
-	if (tunnel.size() <= 0):
-		 return false
+	if prev == null:
+		return false
 		
-	var since_last = position.distance_to(tunnel[-1])
+	var since_last = global_position.distance_to(prev.position)
 	
-	if (since_last >= points_per_unit):
-		var travel_direction = (position - tunnel[-1]).normalized()
-		tunnel._add(tunnel[-1] + travel_direction * points_per_unit)
+	if since_last >= point_spread:
+		var travel_direction = (global_position - prev.position).normalized()
+		add_point(prev.position + travel_direction * point_spread)
 		return true
 	
 	return false
 
 
-func _begin_drawing():
-	tunnel._clear()
-	tunnel._add(position)
+func add_point(pos):
+	var vert = TunnelVertex.new()
+	vert.position = pos
 	
+	manager.add_node(vert)
+	
+	if prev != null:
+		manager.add_edge(vert, prev)
+	
+	prev = vert
+
+
+func start_drawing():
 	is_drawing = true
-	
-	
-func _end_drawing():
-	tunnel._add(position)
-	manager._add(tunnel)
-	
+	add_point(global_position)
+
+
+func end_drawing():
 	is_drawing = false
+	add_point(global_position)

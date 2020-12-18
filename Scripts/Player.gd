@@ -5,6 +5,9 @@ signal throw(location,direction)
 
 export var player_number = 1
 
+export(NodePath) var drawer_path
+onready var drawer = get_node(drawer_path) as TunnelDrawer
+
 var move_right_action := "move_right"
 var move_left_action := "move_left"
 var move_down_action := "move_down"
@@ -77,6 +80,7 @@ func _physics_process(delta):
 			velocity = Vector2.ZERO
 			$AnimatedSprite.animation = "dig"
 			$AnimatedSprite.play()
+			drawer.start_drawing();
 	
 			
 func _on_DigTimer_timeout():
