@@ -13,10 +13,6 @@ var is_drawing = false
 var prev
 
 
-func _ready():
-	start_drawing()
-
-
 func _process(_delta):
 	if (is_drawing):
 		try_add_point()

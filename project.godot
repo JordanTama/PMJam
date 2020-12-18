@@ -24,22 +24,28 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Player.gd"
 }, {
-"base": "Resource",
-"class": "Tunnel",
+"base": "Node2D",
+"class": "TunnelDrawer",
 "language": "GDScript",
-"path": "res://Scripts/Tunnels/Tunnel.gd"
+"path": "res://Scripts/Tunnels/TunnelDrawer.gd"
 }, {
-"base": "Node",
+"base": "Node2D",
 "class": "TunnelManager",
 "language": "GDScript",
 "path": "res://Scripts/Tunnels/TunnelManager.gd"
+}, {
+"base": "Reference",
+"class": "TunnelVertex",
+"language": "GDScript",
+"path": "res://Scripts/Tunnels/TunnelVertex.gd"
 } ]
 _global_script_class_icons={
 "Egg": "",
 "Nest": "",
 "Player": "",
-"Tunnel": "",
-"TunnelManager": ""
+"TunnelDrawer": "",
+"TunnelManager": "",
+"TunnelVertex": ""
 }
 
 [application]
@@ -47,18 +53,3 @@ _global_script_class_icons={
 config/name="PMJam"
 run/main_scene="res://Scenes/Level1.tscn"
 config/icon="res://icon.png"
-
-[display]
-
-window/size/width=800
-window/size/height=800
-window/stretch/mode="2d"
-window/stretch/aspect="keep"
-
-[input]
-
-throw={
-"deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777237,"unicode":0,"echo":false,"script":null)
- ]
-}
