@@ -18,6 +18,7 @@ export var friction = 500
 var is_digging = false
 var is_underground = false
 var is_holding_egg = false
+var can_move = true
 
 var velocity = Vector2.ZERO
 var throw_dir = Vector2.RIGHT
@@ -36,6 +37,9 @@ func _process(delta):
 		throw_egg()
 
 func _physics_process(delta):
+	if !can_move:
+		return
+		
 	if is_digging == false:
 		
 		throw_dir = Vector2.ZERO
