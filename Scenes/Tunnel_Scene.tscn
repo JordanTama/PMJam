@@ -1,20 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Tunnels/TunnelDrawer.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Tunnels/TunnelManager.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
 
 [node name="Root" type="Node"]
 
-[node name="TunnelDrawer" type="Node2D" parent="."]
-script = ExtResource( 1 )
-manager_path = NodePath("../TunnelManager")
-points_per_unit = 2.0
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 526.087, 270.115 )
 
-[node name="TunnelDrawer2" type="Node2D" parent="."]
+[node name="TunnelDrawer" type="Node2D" parent="Player"]
 script = ExtResource( 1 )
-manager_path = NodePath("../TunnelManager")
-points_per_unit = 2.0
+manager_path = NodePath("../../TunnelManager")
+point_spread = 20.0
 
 [node name="TunnelManager" type="Node2D" parent="."]
-position = Vector2( 579.828, 354.968 )
 script = ExtResource( 2 )
