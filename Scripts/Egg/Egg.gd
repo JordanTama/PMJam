@@ -12,8 +12,9 @@ func _ready():
 
 func _on_Egg_body_entered(body):
 	if body is Player:
-		queue_free()
-	if body is Nest:
-		$Sprite.modulate = Color.red
-	else:
-		$Sprite.modulate = Color.white	
+		if(!body.is_holding_egg):
+			queue_free()
+			body.hold_egg()
+	
+func color_egg(color):
+	$Sprite.modulate = color

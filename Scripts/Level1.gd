@@ -19,7 +19,6 @@ func _on_Player_throw(pos, dir):
 	add_child(egg)
 	egg.position = pos + dir*egg_spawn_offset
 	egg.apply_impulse(egg.position,dir*350.0)
-#	egg.add_force(egg.position,dir*100.0)
 	
 	
 	

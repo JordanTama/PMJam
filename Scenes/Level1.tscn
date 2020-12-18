@@ -18,16 +18,53 @@ position = Vector2( 128, 128 )
 
 [node name="Nest2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 384, 128 )
+nest_color = Color( 0, 0.0392157, 1, 1 )
 
 [node name="Nest3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 384, 384 )
+nest_color = Color( 0, 1, 0, 1 )
 
 [node name="Nest4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 128, 384 )
+nest_color = Color( 1, 0, 0.984314, 1 )
 
-[node name="Player" parent="." instance=ExtResource( 4 )]
+[node name="Player1" parent="." instance=ExtResource( 4 )]
 position = Vector2( 192, 192 )
+
+[node name="Player2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 448, 192 )
+player_number = 2
+
+[node name="Player3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 192, 448 )
+player_number = 3
 
 [node name="Egg" parent="." instance=ExtResource( 5 )]
 position = Vector2( 320, 304 )
-[connection signal="throw" from="Player" to="." method="_on_Player_throw"]
+
+[node name="Egg2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 288, 304 )
+
+[node name="Egg3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 288, 336 )
+
+[node name="Egg4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 352, 304 )
+
+[node name="Egg5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 320, 336 )
+
+[node name="Egg6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 352, 336 )
+
+[node name="Egg7" parent="." instance=ExtResource( 5 )]
+position = Vector2( 352, 368 )
+
+[node name="Egg8" parent="." instance=ExtResource( 5 )]
+position = Vector2( 288, 368 )
+
+[node name="Egg9" parent="." instance=ExtResource( 5 )]
+position = Vector2( 320, 368 )
+[connection signal="throw" from="Player1" to="." method="_on_Player_throw"]
+[connection signal="throw" from="Player2" to="." method="_on_Player_throw"]
+[connection signal="throw" from="Player3" to="." method="_on_Player_throw"]
