@@ -33,7 +33,6 @@ func _ready():
 	move_down_action += str(player_number)
 	dig_action += str(player_number)
 	throw_action += str(player_number)
-	print(throw_action)
 
 func _process(delta):
 	if Input.is_action_just_pressed(throw_action):
@@ -74,13 +73,13 @@ func _physics_process(delta):
 			
 			throw_dir = Vector2.RIGHT
 
-		if Input.is_action_just_pressed(dig_action):
-			$DigTimer.start()
-			is_digging = true
-			velocity = Vector2.ZERO
-			$AnimatedSprite.animation = "dig"
-			$AnimatedSprite.play()
-			drawer.start_drawing();
+#		if Input.is_action_just_pressed(dig_action):
+#			$DigTimer.start()
+#			is_digging = true
+#			velocity = Vector2.ZERO
+#			$AnimatedSprite.animation = "dig"
+#			$AnimatedSprite.play()
+#			drawer.start_drawing();
 	
 			
 func _on_DigTimer_timeout():
